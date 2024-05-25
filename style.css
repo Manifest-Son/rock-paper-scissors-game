@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, p{
+  font-size: 62.5%;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 100;
+  font-style: normal;
+}
+body{
+  background-color: #9ec91e;
+}
+@media screen and (max-width: 56.25em) {
+  body{
+    width:50vw;
+  }
+  
+}
+.topbar{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 2rem;
+
+}
+.right-items{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  font-size: 2rem;
+}
+.count-score{
+  display: flex;
+  flex-wrap: nowrap;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  gap: 1.5rem;
+}
+.main-body{
+
+}
+.computer-plays{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 2rem;
+}
+.heading-plays{
+  font-size: 1.3rem;
+  font-weight: 200;
+}
+.display-words-score{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: rgb(242, 194,68);
+ padding: 2rem 2.5rem;
+}
+.display-word{
+  font-size: 1.5rem;
+}
+.human-plays{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 2rem;
+}
+.selection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1rem;
+  gap: 1.5rem
+}
+.rock, .scissors, .paper{
+  border-radius: 10px;
+}
+.computer-emoji-input{
+  font-size: 10rem;
+  border: 2px dashed black;
+}
+.player-emoji-input{
+  font-size: 10rem;
+  border: 2px dashed black;
+}
+.selection-button{
+  cursor: pointer;
+  padding: 1rem 2rem;
+  outline: none;
+  border-radius: 10px;
+}
+.emoji-size{
+  font-size: 6rem;
+  
+}
