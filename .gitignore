@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 workingtxt.txt
+trial.js
+backup.js
 
 # Editor directories and files
 .vscode/*
