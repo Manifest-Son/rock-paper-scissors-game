@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="" />
+    <link rel="icon" href="assets/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors Game</title>
     <link rel="stylesheet" href="style.css">
@@ -10,34 +10,30 @@
   <body>
     <div id="app">
       <script type="module" src="/main.js"></script>
-      <header class="topbar">
-        <h1 class="copyright">&copy; 2024 <a href="">Lennox Githinji</a></h1>
-        <h1 class="dipslay-results">
+      <div class="topbar">
+        <p class="left-items">&copy; 2024 <a href="https://www.linkedin.com/in/lennox-githinji/">Lennox Githinji</a></p>
+        <p class="dipslay-results">
           <div class="right-items">
-            <p>computer</p>
-            <div class="count-score">
-              <p class="computer-scores">2</p>
-              <p class="player-scores">3</p>
-            </div>
+          <p>computer</p>
+          <p class="computer-scores" id="computer-scores">0</p>
+          <p class="player-scores" id="player-scores">0</p>
           <p>player</p>
           </div>
-        </h1>
-      </header>
-      <section class="main-body">
-        <div class="playing-ground">
-          <div class="computer-plays">
-            <p class="heading-plays">Computer</p>
-            <p class="computer-emoji-input" id="computer-emoji-input">✊</p>
-          </div>
-          <div class="display-words-score">
-            <p class="display-word" id="display-word">wins</p>
-          </div>
-          <div class="human-plays">
-            <p class="heading-plays">Player</p>
-            <p class="player-emoji-input" id="player-emoji-input">✊</p>
-          </div>
+        </p>
+      </div>
+      <div class="playing-ground">
+        <div class="computer-plays">
+          <p class="heading-plays">Computer</p>
+          <p class="computer-emoji-input" id="computer-emoji-input">✊</p>
         </div>
-        <div class="selection">
+        <div class="display-words-score">
+          <p class="display-word" id="display-word">CURRENTLY DRAW</p>
+        </div>
+        <div class="human-plays">
+          <p class="heading-plays">Player</p>
+          <p class="player-emoji-input" id="player-emoji-input">✊</p>
+        </div>
+      <div class="selection">
           <button class="selection-button" id="rock-button">
             <p class="emoji-size">✊</p>
             <p class="button-name">Rock</p></button>
@@ -47,8 +43,8 @@
           <button class="selection-button" id="scissors-button">
             <p class="emoji-size">✌️</p>
             <p class="button-name">Scissors</p></button>
-        </div>
-      </section>
+      </div>
+      </div>
     </div>
   </body>
 </html>
