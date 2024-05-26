@@ -1,42 +1,67 @@
-const computerInputs = ["rock", "paper", "scissors"];
-const emoji = [{ rock: "✊" }, { paper: "✋" }, { scissors: "✌️" }];
+document.addEventListener('DOMContentLoaded', function () {
+  let compScore = 0;
+  let playerScore = 0;
 
-const playerScore = document.getElementById("player-scores");
-const computerScore = document.getElementById("computer-scores");
-const computerDisplay = document.getElementById("computer-emoji-input");
-const playerDisplay = document.getElementById("player-emoji-input");
-const overallDisplay = document.getElementById("display-word");
-
-let playerWins = 0;
-let computerWins = 0;
-
-function rpsGame(playerChoice) {
-  const computerChoice = choices[Math.floor(Math.random() * computerInputs.length)];
-  console.log(computerChoice);
-  console.log(playerChoice);
-
-  let result;
-  if (playerChoice === computerChoice) {
-    result = "DRAW";
-  } else if (
-    (playerChoice === "rock" && computerChoice === "scissors") ||
-    (playerChoice === "paper" && computerChoice === "rock") ||
-    (playerChoice === "scissors" && computerChoice === "paper")
-  ) {
-    result = "PLAYER WINS";
-    playerWins++;
-  } else {
-    result = "COMPUTER WINS";
-    computerWins++;
+  function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors'];
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
   }
-  console.log(result);
-  playerDisplay.innerHTML = ` ${emojis[playerChoice]}`;
-  computerDisplay.innerHTML = `${emojis[computerChoice]}`;
-  overallDisplay.innerHTML = `${result}`;
-  updateScoreDisplay();
-}
 
-function updateScoreDisplay() {
-  playerScore.innerHTML = `${playerWins}`;
-  computerScore.innerHTML = `${computerWins}`;
-}
+  function determineWinner(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+      return "DRAW";
+    }
+
+    if (
+      (playerChoice === 'rock' && computerChoice === 'scissors') ||
+      (playerChoice === 'paper' && computerChoice === 'rock') ||
+      (playerChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+      playerScore++;
+      return 'PLAYER WINS';
+    } else {
+      compScore++;
+      return 'COMPUTER WINS';
+    }
+  }
+
+  function playGame(playerChoice) {
+    const computerChoice = getComputerChoice();
+    const result = determineWinner(playerChoice, computerChoice);
+    document.getElementById("display-word").textContent = result;
+    document.getElementById('player-emoji-input').textContent = getEmoji(playerChoice);
+    document.getElementById('computer-emoji-input').textContent = getEmoji(computerChoice);
+    updateScoreboard();
+  }
+
+  function getEmoji(choice) {
+    switch (choice) {
+      case 'rock':
+        return '✊';
+      case 'paper':
+        return '✋';
+      case 'scissors':
+        return '✌️';
+      default:
+        return '';
+    }
+  }
+
+  function updateScoreboard() {
+    document.getElementById("computer-scores").textContent = `${compScore}`;
+    document.getElementById("player-scores").textContent = `${playerScore}`;
+  }
+
+  document.getElementById('rock-button').addEventListener('click', function () {
+    playGame('rock');
+  });
+
+  document.getElementById('paper-button').addEventListener('click', function () {
+    playGame('paper');
+  });
+
+  document.getElementById('scissors-button').addEventListener('click', function () {
+    playGame('scissors');
+  });
+});
